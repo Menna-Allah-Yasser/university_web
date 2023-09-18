@@ -1,4 +1,7 @@
-<%@ page import="java.sql.*" %><%--
+<%@ page import="java.sql.*" %>
+<%@ page import="Model.User" %>
+<%@ page import="java.util.List" %>
+<%@ page import="DB.UserDB" %><%--
   Created by IntelliJ IDEA.
   User: HP
   Date: 12/09/2023
@@ -14,62 +17,21 @@
 </head>
 
 <body>
+<h1>User List Page</h1>
 <div>
     <table>
-
         <th>Email</th>
         <th>UserName</th>
         <th>Phone</th>
 
-        <tr>
-            <td>Menna</td>
-            <td>Menna</td>
-            <td>Menna</td>
-
-        </tr>
-
-
-<%!
-    private final  String user = "root";
-    private final  String uni = "university";
-    private final  String password = "password";
-    private final String url="jdbc:mysql://localhost:"+3306+"/"+uni;
-    public  Connection connect() throws SQLException, ClassNotFoundException {
-        Class.forName("com.mysql.cj.jdbc.Driver");
-        return DriverManager.getConnection(url, user, password);
-
-    }
-%>
-<%
-
-        Connection connection;
-        String query;
-        PreparedStatement preparedStatement;
-        ResultSet resultSet = null;
-        try {
-
-            connection = connect();
-            query = "select * from signup ";
-            preparedStatement = connection.prepareStatement(query);
-            resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()) {  %>
-               <tr>
-                   <td> <%= resultSet.getString("email")%></td>
-                    <td><%=resultSet.getString("FirstName") %></td>
-                    <td><%= resultSet.getString("Phone")%></td>
-
-              </tr>
-           <% }
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        } %>
-
-
-
-
-
+        <%List<User>list= new UserDB().getAllUsers();
+            for(User item : list){  %>
+            <tr>
+            <td> <%= item.getEmail()%></td>
+            <td><%=item.getfName() %></td>
+            <td><%= item.getPhone()%></td>
+            </tr>
+           <% }%>
 
     </table>
 </div>

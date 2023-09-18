@@ -3,6 +3,8 @@ package DB;
 import Model.User;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserDB {
 
@@ -65,6 +67,45 @@ public class UserDB {
             System.out.println(e.getMessage());
         }
         return false;
+    }
+
+    public List<User> getAllUsers(){
+        List<User> users = new ArrayList<User>();
+        try {
+            connection = connect();
+            query = "select * from signup ";
+            preparedStatement = connection.prepareStatement(query);
+            resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                User user=new User();
+                user.setEmail(resultSet.getString("email"));
+                user.setPass(resultSet.getString("password"));
+                user.setfName(resultSet.getString("FirstName"));
+                user.setlName(resultSet.getString("lastName"));
+                user.setPhone(resultSet.getString("phone"));
+                user.setType(resultSet.getString("job"));
+                users.add(user);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+      return users;
+    }
+
+   public void deleteUser(String email){
+       try {
+           connection = connect();
+           query = "delete from signup where email = ? ";
+           preparedStatement = connection.prepareStatement(query);
+           preparedStatement.setString(1, email);
+           resultSet = preparedStatement.executeQuery();
+       } catch (SQLException ex) {
+           System.out.println(ex.getMessage());
+       } catch (Exception e) {
+           System.out.println(e.getMessage());
+       }
     }
 
 
