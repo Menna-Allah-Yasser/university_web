@@ -1,0 +1,62 @@
+* {
+    box-sizing: border-box;
+}
+
+
+.bg-img {
+    /* The image used */
+    background-color: white;
+    background-size: cover;
+    height: 550px;
+    position: sticky;
+    /* Center and scale the image nicely */
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+
+}
+
+/* Add styles to the form container */
+.container2 {
+    position: absolute;
+    margin: 500px;
+    margin-top: 20px;
+    width: 300px;
+    height: auto;
+    padding: 16px;
+    border-style: solid;
+    border-color: rgb(185, 180, 180);
+    background-color: white;
+}
+
+
+input[type=text],
+input[type=password] ,
+input[type=email] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    background-color:  white;
+    border-style: none;
+    border-color: beige;
+}
+
+
+.im {
+    display: block;
+    width: 50%;
+    height: 70px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn {
+    background-color: #767f7c;
+    color: white;
+    padding: 16px 20px;
+    margin-top:20px ;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    border-radius: 30px;
+}

@@ -1,0 +1,13 @@
+create database university;
+
+use university;
+
+
+ create table SignUp (
+     Email varchar(30) ,
+     FirstName varchar(10),
+     lastName varchar(10),
+     Phone varchar(11) NOT NULL,
+     Password varchar(30) NOT NULL ,
+     job varchar(10),
+     primary key (Email) );
