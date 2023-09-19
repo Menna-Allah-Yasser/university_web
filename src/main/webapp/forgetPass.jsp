@@ -13,14 +13,14 @@
 </head>
 <body>
 <div class="bg-img">
-    <form class="container1">
+    <form class="container1" action="/webapp_war_exploded/ForgetPass-Servlet" method="post">
         <img src="uniLogo.png" alt="" class="im">
         <p class="p">Enter your email and we'll send you a link to get back into your account. </p>
 
         <input type="text" placeholder="Email" name="email" required>
 
 
-        <button class="btn">Send E-mail</button>
+        <button class="btn" > Send E-mail </button>
 
     </form>
 

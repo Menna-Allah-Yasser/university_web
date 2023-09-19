@@ -14,7 +14,7 @@
 <body>
 <div class="bg-img">
     <form class="container2" action="/webapp_war_exploded/SignUp-Servlet" method="post">
-        <img src="uniLogo.avif" alt="" class="im">
+        <img src="uniLogo.png" alt="" class="im">
 
 
         <input type="text" placeholder="First Name" name="fn" required>

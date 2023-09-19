@@ -31,6 +31,17 @@
     </servlet-mapping>
 
 
+    <servlet>
+        <servlet-name>ForgetPassServlet</servlet-name>
+        <servlet-class>com.example.webapp.ForgetPassServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ForgetPassServlet</servlet-name>
+        <url-pattern>/ForgetPass-Servlet</url-pattern>
+    </servlet-mapping>
+
+
 
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
