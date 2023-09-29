@@ -17,7 +17,7 @@
         <img src="uniLogo.png" alt="" class="im">
         <p class="p">Enter your email and we'll send you a link to get back into your account. </p>
 
-        <input type="text" placeholder="Email" name="email" required>
+        <input type="email" placeholder="Email" name="email" required>
 
 
         <button class="btn" > Send E-mail </button>

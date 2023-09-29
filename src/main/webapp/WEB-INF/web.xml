@@ -41,7 +41,23 @@
         <url-pattern>/ForgetPass-Servlet</url-pattern>
     </servlet-mapping>
 
-
+    <display-name>EmailFacility</display-name>
+    <context-param>
+        <param-name>host</param-name>
+        <param-value>smtp.gmail.com</param-value>
+    </context-param>
+    <context-param>
+        <param-name>port</param-name>
+        <param-value>587</param-value>
+    </context-param>
+    <context-param>
+        <param-name>user</param-name>
+        <param-value>E-Mail</param-value>
+    </context-param>
+    <context-param>
+        <param-name>pass</param-name>
+        <param-value>Pass</param-value>
+    </context-param>
 
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
